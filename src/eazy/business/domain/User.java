@@ -11,10 +11,16 @@ public class User {
 	private Address address;
 	private String telephone;
 	private GPS coordinates;
-	private ParkSpace space;
+	private Reservation reservation;
 	
-	public User(){
-		
+	public User(String name, String password, Integer id, Integer payMethod, 
+			Address address, String telephone) {
+		this.name = name;
+		this.password = password;
+		this.id = id;
+		this.payMethod = payMethod;
+		this.address = address;
+		this.telephone = telephone;
 	}
 
 	public void reserveSpace(ParkSpace space, Date startDate, Date endDate) {
@@ -81,12 +87,14 @@ public class User {
 		this.coordinates = coordinates;
 	}
 
-	public ParkSpace getSpace() {
-		return space;
+	public Reservation getReservation() {
+		return reservation;
 	}
 
-	public void setSpace(ParkSpace space) {
-		this.space = space;
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
+
+	
 	
 }

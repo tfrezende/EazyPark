@@ -5,34 +5,37 @@ import java.util.List;
 
 public class ParkSpace {
 
+	private ParkMap parkingLot;
 	public static boolean status;
 	private User user;
 	private Integer id;
 	private Integer elapsedTime;
 	private List<Reservation> reservations;
 	private static final Double HOURLY_RATE = 5.0;
-	
-	public ParkSpace() {
 		
+	public ParkSpace(ParkMap parkingLot, User user, Integer id, 
+			Integer elapsedTime, List<Reservation> reservations) {
+		super();
+		this.parkingLot = parkingLot;
+		this.user = user;
+		this.id = id;
+		this.elapsedTime = elapsedTime;
+		this.reservations = reservations;
 	}
-	
+
 	public boolean hasReservation(Date startDate, Date endDate) {
 		return true;
 	}
 	
-	public boolean isAvailable() {
-		if (status == true) {
-			return false;
-		}
-		
-		return true;
+	public boolean isAvailable() {		
+		return !status;
 	}
 
 	public Double calculateCost() {
 		return ((elapsedTime * HOURLY_RATE)/60.0);
 	}
 
-	public static boolean isStatus() {
+	public static boolean getStatus() {
 		return status;
 	}
 
@@ -74,6 +77,14 @@ public class ParkSpace {
 
 	public static Double getHourlyRate() {
 		return HOURLY_RATE;
+	}
+
+	public ParkMap getParkingLot() {
+		return parkingLot;
+	}
+
+	public void setParkingLot(ParkMap parkingLot) {
+		this.parkingLot = parkingLot;
 	}
 	
 }

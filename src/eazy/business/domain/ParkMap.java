@@ -5,14 +5,13 @@ import java.util.List;
 public class ParkMap {
 	
 	private List<ParkSpace> spaceMap;
+	private String name;
+	private Integer id;
+	private Address address;
 	
 	
-	public ParkMap() {
-		
-	}
-	
-	public void update() {
-		
+	public ParkMap(List<ParkSpace> map) {
+		this.spaceMap = map;
 	}
 
 	public List<ParkSpace> getSpaceMap() {
@@ -22,7 +21,29 @@ public class ParkMap {
 	public void setSpaceMap(List<ParkSpace> spaceMap) {
 		this.spaceMap = spaceMap;
 	}
-	
-	
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }

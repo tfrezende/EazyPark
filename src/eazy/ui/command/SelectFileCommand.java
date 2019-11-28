@@ -19,7 +19,7 @@ public class SelectFileCommand extends Command {
 	}
 
 	@Override
-	// Toma no cu Pedro
+
 	
 	
 	public void execute() throws Exception {

@@ -8,9 +8,16 @@ public class Address {
 	private String city;
 	private String state;
 	private String country;
-	
-	public Address() {
-		
+
+	public Address(String street, String number, String apt, String zip, String city, String state, String country) {
+		super();
+		this.street = street;
+		this.number = number;
+		this.apt = apt;
+		this.zip = zip;
+		this.city = city;
+		this.state = state;
+		this.country = country;
 	}
 
 	public String getStreet() {
