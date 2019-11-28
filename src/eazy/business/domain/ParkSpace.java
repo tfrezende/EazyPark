@@ -24,7 +24,20 @@ public class ParkSpace {
 	}
 
 	public boolean hasReservation(Date startDate, Date endDate) {
-		return true;
+		
+		for (Reservation reservation : reservations) {
+			if (
+				(startDate.after(reservation.getStartDate()) && 
+				startDate.before(reservation.getEndDate())) 
+				||
+				(endDate.after(reservation.getStartDate()) && 
+				endDate.before(reservation.getEndDate()))
+				) {				
+				
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean isAvailable() {		
