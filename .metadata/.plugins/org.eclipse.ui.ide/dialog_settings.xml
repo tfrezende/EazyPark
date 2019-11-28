@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\chita\git\EazyPark"/>
 		<item value="C:\Users\chita\git"/>
 		<item value="C:\Users\Narumi\Documents\UFRGS\2019.1\TCP\TP Etapa 3\TCP-Etapa-3"/>
 	</list>

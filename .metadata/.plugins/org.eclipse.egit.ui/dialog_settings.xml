@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
-	<item value="C:\Users\Narumi\Documents\UFRGS\2019.1\TCP\TP Etapa 3\TCP-Etapa-3\.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Users\Narumi\Documents\UFRGS\2019.1\TCP\TP Etapa 3\TCP-Etapa-3\.git"/>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/tfrezende/EazyPark.git"/>
+	</list>
 	<section name="GitImportWizard">
-		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
 	</section>
 </section>
