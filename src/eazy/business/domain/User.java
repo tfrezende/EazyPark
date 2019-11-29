@@ -1,6 +1,7 @@
 package eazy.business.domain;
 
 import java.util.Date;
+import java.util.Random;
 
 public class User {
 	
@@ -24,7 +25,15 @@ public class User {
 	}
 
 	public void reserveSpace(ParkSpace space, Date startDate, Date endDate) {
-		
+		if (!space.hasReservation(startDate, endDate)) {
+			Random r = new Random();
+			Integer identifier = r.nextInt();
+			
+			this.reservation = new Reservation(
+					identifier, startDate, endDate, this, space);
+			
+			space.getReservations().add(this.reservation);
+		}
 	}
 	
 	public void changePayMethod(Integer newMethod) {
