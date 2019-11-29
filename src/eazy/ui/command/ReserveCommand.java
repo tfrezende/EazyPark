@@ -11,13 +11,13 @@ import eazy.data.Database;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
-public class IncludeCommand extends Command {
+public class ReserveCommand extends Command {
 	
 	private List<Product> products = new ArrayList<>();
 	private List<Reviewer> reviewers;
 	
 
-	public IncludeCommand(MainInterface catalogueInterface, Database database) {
+	public ReserveCommand(MainInterface catalogueInterface, Database database) {
 		super(catalogueInterface, database);
 	}
 

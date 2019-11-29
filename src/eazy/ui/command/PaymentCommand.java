@@ -11,10 +11,10 @@ import eazy.data.Database;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
-public class SelectFileCommand extends Command {
+public class PaymentCommand extends Command {
 	private List<EvalGroup> groups = new ArrayList<>();;
 
-	public SelectFileCommand(MainInterface catalogueInterface, Database database) {
+	public PaymentCommand(MainInterface catalogueInterface, Database database) {
 		super(catalogueInterface, database);
 	}
 

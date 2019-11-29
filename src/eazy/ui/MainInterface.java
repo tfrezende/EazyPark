@@ -7,10 +7,10 @@ import org.apache.commons.logging.Log;
 
 import eazy.business.BusinessException;
 import eazy.data.Database;
-import eazy.ui.command.AllocateCommand;
+import eazy.ui.command.ConsultCommand;
 import eazy.ui.command.Command;
-import eazy.ui.command.IncludeCommand;
-import eazy.ui.command.SelectFileCommand;
+import eazy.ui.command.ReserveCommand;
+import eazy.ui.command.PaymentCommand;
 
 
 
@@ -23,9 +23,9 @@ public class MainInterface {
 	public MainInterface() {
 		Database database = new Database();
 		this.actions = new LinkedHashMap<>();
-		actions.put(1, new AllocateCommand(this, database));
-		actions.put(2, new IncludeCommand(this, database));
-		actions.put(3, new SelectFileCommand(this, database));
+		actions.put(1, new ConsultCommand(this, database));
+		actions.put(2, new ReserveCommand(this, database));
+		actions.put(3, new PaymentCommand(this, database));
 	}
 	
 	private String getMenu() {

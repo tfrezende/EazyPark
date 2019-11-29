@@ -6,13 +6,13 @@ import eazy.data.Database;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
-public class AllocateCommand extends Command {
+public class ConsultCommand extends Command {
 	
 	private EvalGroup evalGroup;
 	private final int MIN_MEMBERS = 2;
 	private final int MAX_MEMBERS = 5;
 
-	public AllocateCommand(MainInterface catalogueInterface, Database database) {
+	public ConsultCommand(MainInterface catalogueInterface, Database database) {
 		super(catalogueInterface, database);
 	}
 
