@@ -10,9 +10,9 @@ public class EazyPark {
 		
 		BasicConfigurator.configure();		
 	
-		MainInterface catalogueInterface = new MainInterface();
+		MainInterface mainInterface = new MainInterface();
 		
-		catalogueInterface.showMenu();
+		mainInterface.showMenu();
 		
 	}
 	

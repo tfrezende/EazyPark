@@ -7,9 +7,7 @@ public class Payment {
 	private User user;
 	private ParkSpace space;
 	private Double value;
-	private Date date;
-	
-	
+	private Date date;	
 	
 	public Payment(User user, ParkSpace space, Double value, Date date) {
 		super();
@@ -17,21 +15,6 @@ public class Payment {
 		this.space = space;
 		this.value = value;
 		this.date = date;
-	}
-
-	public boolean processPayment(){
-		
-		if (!validate()) {
-			
-			return false;
-		}
-		
-		return true;
-	}
-	
-	public boolean validate() {
-		
-		return false;
 	}
 
 	public User getUser() {
