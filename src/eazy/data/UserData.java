@@ -33,7 +33,7 @@ public class UserData {
 		return users;
 	}
 
-	public void initData() {
+	private void initData() {
 		try {
 			
 			Random r = new Random();
