@@ -12,8 +12,8 @@ import eazy.ui.UIUtils;
 
 public class PaymentCommand extends Command {
 
-	public PaymentCommand(MainInterface mainInterface, ParkData parkData, UserData userData) {
-		super(mainInterface, parkData, userData);
+	public PaymentCommand(MainInterface mainInterface, UserData userData, ParkData parkData) {
+		super(mainInterface, userData, parkData);
 	}
 
 	@Override

@@ -8,6 +8,8 @@ import eazy.business.domain.Evaluation;
 import eazy.business.domain.Product;
 import eazy.business.domain.Reviewer;
 import eazy.data.Database;
+import eazy.data.ParkData;
+import eazy.data.UserData;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
@@ -17,8 +19,8 @@ public class ReserveCommand extends Command {
 	private List<Reviewer> reviewers;
 	
 
-	public ReserveCommand(MainInterface catalogueInterface, Database database) {
-		super(catalogueInterface, database);
+	public ReserveCommand(MainInterface mainInterface, UserData userData, ParkData parkData) {
+		super(mainInterface, userData, parkData);
 	}
 
 	@Override

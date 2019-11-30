@@ -3,6 +3,8 @@ package eazy.ui.command;
 import eazy.business.BusinessException;
 import eazy.business.domain.EvalGroup;
 import eazy.data.Database;
+import eazy.data.ParkData;
+import eazy.data.UserData;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
@@ -12,8 +14,8 @@ public class ConsultCommand extends Command {
 	private final int MIN_MEMBERS = 2;
 	private final int MAX_MEMBERS = 5;
 
-	public ConsultCommand(MainInterface catalogueInterface, Database database) {
-		super(catalogueInterface, database);
+	public ConsultCommand(MainInterface mainInterface, UserData userData, ParkData parkData) {
+		super(mainInterface, userData, parkData);
 	}
 
 	public void execute() throws Exception {

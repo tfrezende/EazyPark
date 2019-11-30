@@ -14,11 +14,11 @@ public abstract class Command implements UIAction {
 	protected UserData userData;
 	private boolean isEnabled;
 
-	public Command(MainInterface mainInterface, ParkData parkData, UserData userData) {
-		this(mainInterface, parkData, userData, false);
+	public Command(MainInterface mainInterface, UserData userData, ParkData parkData) {
+		this(mainInterface, userData, parkData, false);
 	}
 
-	public Command(MainInterface mainInterface, ParkData parkData, UserData userData,
+	public Command(MainInterface mainInterface, UserData userData, ParkData parkData, 
 			boolean isEnabled) {
 		this.setMainInterface(mainInterface);
 		this.isEnabled = isEnabled;
