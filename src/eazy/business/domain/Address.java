@@ -9,15 +9,14 @@ public class Address {
 	private String state;
 	private String country;
 
-	public Address(String street, String number, String apt, String zip, String city, String state, String country) {
+	public Address(String street, String number, String zip) {
 		super();
 		this.street = street;
 		this.number = number;
-		this.apt = apt;
 		this.zip = zip;
-		this.city = city;
-		this.state = state;
-		this.country = country;
+		this.city = "Porto Alegre";
+		this.state = "RS";
+		this.country = "Brazil";
 	}
 
 	public String getStreet() {

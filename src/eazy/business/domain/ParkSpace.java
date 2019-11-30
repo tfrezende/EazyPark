@@ -6,21 +6,20 @@ import java.util.List;
 public class ParkSpace {
 
 	private ParkMap parkingLot;
-	public static boolean status;
+	public boolean status; // Public b/c it depends on external signal (sensor)
 	private User user;
 	private Integer id;
-	private Integer elapsedTime;
+	public Double hoursOccupied; // Public b/c counter is located on external sensor
 	private List<Reservation> reservations;
 	private static final Double HOURLY_RATE = 5.0;
 		
-	public ParkSpace(ParkMap parkingLot, User user, Integer id, 
-			Integer elapsedTime, List<Reservation> reservations) {
+	public ParkSpace(ParkMap parkingLot, Integer id) {
 		super();
 		this.parkingLot = parkingLot;
-		this.user = user;
 		this.id = id;
-		this.elapsedTime = elapsedTime;
-		this.reservations = reservations;
+		this.hoursOccupied = 0.0;
+		this.reservations = null;
+		this.status = false;
 	}
 
 	public boolean hasReservation(Date startDate, Date endDate) {
@@ -45,15 +44,15 @@ public class ParkSpace {
 	}
 
 	public Double calculateCost() {
-		return ((elapsedTime * HOURLY_RATE)/60.0);
+		return ((hoursOccupied * HOURLY_RATE)/60.0);
 	}
 
-	public static boolean getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 
-	public static void setStatus(boolean status) {
-		ParkSpace.status = status;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public User getUser() {
@@ -72,12 +71,12 @@ public class ParkSpace {
 		this.id = id;
 	}
 
-	public Integer getElapsedTime() {
-		return elapsedTime;
+	public Double getHoursOccupied() {
+		return hoursOccupied;
 	}
 
-	public void setElapsedTime(Integer elapsedTime) {		
-		this.elapsedTime = elapsedTime;
+	public void setHoursOccupied(Double hoursOccupied) {		
+		this.hoursOccupied = hoursOccupied;
 	}
 
 	public List<Reservation> getReservations() {

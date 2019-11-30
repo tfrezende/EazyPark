@@ -9,9 +9,8 @@ public class ParkMap {
 	private Integer id;
 	private Address address;
 	
-	public ParkMap(List<ParkSpace> spaceMap, String name, Integer id, Address address) {
+	public ParkMap(String name, Integer id, Address address) {
 		super();
-		this.spaceMap = spaceMap;
 		this.name = name;
 		this.id = id;
 		this.address = address;
