@@ -7,12 +7,12 @@ import org.apache.commons.logging.Log;
 
 import eazy.business.BusinessException;
 import eazy.data.Database;
-import eazy.ui.command.ConsultCommand;
+import eazy.data.ParkData;
+import eazy.data.UserData;
 import eazy.ui.command.Command;
-import eazy.ui.command.ReserveCommand;
+import eazy.ui.command.ConsultCommand;
 import eazy.ui.command.PaymentCommand;
-
-
+import eazy.ui.command.ReserveCommand;
 
 public class MainInterface {
 	
@@ -21,11 +21,12 @@ public class MainInterface {
 	protected Log log;
 	
 	public MainInterface() {
-		Database database = new Database();
+		UserData userData = new UserData();
+		ParkData parkData = new ParkData();
 		this.actions = new LinkedHashMap<>();
-		actions.put(1, new ConsultCommand(this, database));
-		actions.put(2, new ReserveCommand(this, database));
-		actions.put(3, new PaymentCommand(this, database));
+		actions.put(1, new ConsultCommand(this, userData, parkData));
+		actions.put(2, new ReserveCommand(this, userData, parkData));
+		actions.put(3, new PaymentCommand(this, userData, parkData));
 	}
 	
 	private String getMenu() {
