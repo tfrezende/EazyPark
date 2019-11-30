@@ -19,8 +19,8 @@ public class ReserveCommand extends Command {
 	private List<Reviewer> reviewers;
 	
 
-	public ReserveCommand(MainInterface mainInterface, UserData userData, ParkData parkData) {
-		super(mainInterface, userData, parkData);
+	public ReserveCommand(MainInterface mainInterface, ParkData parkData) {
+		super(mainInterface, parkData);
 	}
 
 	@Override

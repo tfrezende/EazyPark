@@ -14,8 +14,8 @@ public class ConsultCommand extends Command {
 	private final int MIN_MEMBERS = 2;
 	private final int MAX_MEMBERS = 5;
 
-	public ConsultCommand(MainInterface mainInterface, UserData userData, ParkData parkData) {
-		super(mainInterface, userData, parkData);
+	public ConsultCommand(MainInterface mainInterface, ParkData parkData) {
+		super(mainInterface, parkData);
 	}
 
 	public void execute() throws Exception {
