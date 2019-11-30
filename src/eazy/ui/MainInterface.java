@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 
 import eazy.business.BusinessException;
-import eazy.data.Database;
 import eazy.data.ParkData;
 import eazy.data.UserData;
 import eazy.ui.command.Command;
@@ -22,7 +21,7 @@ public class MainInterface {
 	
 	public MainInterface() {
 		UserData userData = new UserData();
-		ParkData parkData = new ParkData();
+		ParkData parkData = new ParkData(true, userData.getUsers());
 		this.actions = new LinkedHashMap<>();
 		actions.put(1, new ConsultCommand(this, parkData));
 		actions.put(2, new ReserveCommand(this, parkData));
