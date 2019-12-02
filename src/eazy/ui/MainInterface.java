@@ -24,7 +24,7 @@ public class MainInterface {
 		ParkData parkData = new ParkData(true, userData.getUsers());
 		this.actions = new LinkedHashMap<>();
 		actions.put(1, new ConsultCommand(this, parkData));
-		actions.put(2, new ReserveCommand(this, parkData));
+		actions.put(2, new ReserveCommand(this, parkData, userData));
 		actions.put(3, new PaymentCommand(this, parkData));
 	}
 	

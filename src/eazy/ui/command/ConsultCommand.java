@@ -17,6 +17,14 @@ public class ConsultCommand extends Command {
 
 	public void execute() throws Exception {
 		
+		ParkMap activeLot = selectParkingLot();
+			
+		displayMap(activeLot);		
+		
+	}
+	
+	private ParkMap selectParkingLot() {
+		
 		Scanner scanner = new Scanner(System.in);
 		Map<Integer, ParkMap> parkingLots = parkData.getParkingLots();
 		
@@ -37,9 +45,7 @@ public class ConsultCommand extends Command {
 		
 		scanner.close();
 		
-		ParkMap activeLot = parkingLots.get(lot);
-			
-		displayMap(activeLot);		
+		return parkingLots.get(lot);
 		
 	}
 	

@@ -1,5 +1,6 @@
 package eazy.business.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class ParkSpace {
 		this.parkingLot = parkingLot;
 		this.id = id;
 		this.hoursOccupied = 0.0;
-		this.reservations = null;
+		this.reservations = new ArrayList<Reservation>();
 		this.status = false;
 	}
 

@@ -1,6 +1,7 @@
 package eazy.ui.command;
 
 import eazy.data.ParkData;
+import eazy.data.UserData;
 import eazy.ui.MainInterface;
 import eazy.ui.TextManager;
 import eazy.ui.UIAction;
@@ -10,10 +11,15 @@ public abstract class Command implements UIAction {
 
 	private MainInterface mainInterface;
 	protected ParkData parkData;
-	private boolean isEnabled;
+	protected UserData userData;
+	private boolean isEnabled;	
 
 	public Command(MainInterface mainInterface, ParkData parkData) {
 		this(mainInterface, parkData, false);
+	}
+	
+	public Command(MainInterface mainInterface, ParkData parkData, UserData userData) {
+		this(mainInterface, parkData, userData, false);
 	}
 
 	public Command(MainInterface mainInterface, ParkData parkData, 
@@ -21,6 +27,14 @@ public abstract class Command implements UIAction {
 		this.setMainInterface(mainInterface);
 		this.isEnabled = isEnabled;
 		this.parkData = parkData;
+	}
+	
+	public Command(MainInterface mainInterface, ParkData parkData, UserData userData,
+			boolean isEnabled) {
+		this.setMainInterface(mainInterface);
+		this.isEnabled = isEnabled;
+		this.parkData = parkData;
+		this.userData = userData;
 	}
 
 	protected TextManager getTextManager() {
