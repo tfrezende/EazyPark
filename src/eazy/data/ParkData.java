@@ -147,6 +147,10 @@ public class ParkData {
 				users.get(5), spaces3.get(15)));		
 		spaces3.get(15).setReservations(reservations3);
 		
+		lot1.setSpaceMap(spaces1);
+		lot2.setSpaceMap(spaces2);
+		lot3.setSpaceMap(spaces3);
+		
 		parkingLots.put(1, lot1);
 		parkingLots.put(2, lot2);
 		parkingLots.put(3, lot3);		

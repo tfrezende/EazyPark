@@ -1,18 +1,15 @@
 package eazy.ui.command;
 
-import eazy.business.BusinessException;
-import eazy.business.domain.EvalGroup;
-import eazy.data.Database;
+import java.util.Map;
+import java.util.Scanner;
+
+import eazy.business.domain.ParkMap;
+import eazy.business.domain.ParkSpace;
 import eazy.data.ParkData;
-import eazy.data.UserData;
 import eazy.ui.MainInterface;
 import eazy.ui.UIUtils;
 
 public class ConsultCommand extends Command {
-	
-	private EvalGroup evalGroup;
-	private final int MIN_MEMBERS = 2;
-	private final int MAX_MEMBERS = 5;
 
 	public ConsultCommand(MainInterface mainInterface, ParkData parkData) {
 		super(mainInterface, parkData);
@@ -20,31 +17,44 @@ public class ConsultCommand extends Command {
 
 	public void execute() throws Exception {
 		
-		System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("menu.allocation"));
+		Scanner scanner = new Scanner(System.in);
+		Map<Integer, ParkMap> parkingLots = parkData.getParkingLots();
 		
-		String group = UIUtils.INSTANCE.readString("message.ask.group");
+		System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("menu.consult"));
+		System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("message.ask.lot"));
 		
-		evalGroup = database.getGroup(group);
+		for (Map.Entry<Integer, ParkMap> parkLot : parkingLots.entrySet()) {
+			System.out.println(parkLot.getKey() + " - " + parkLot.getValue().getName());
+		}
+		Integer lot = 0;
 		
-		testAllocation(evalGroup);
+		do {
+			lot = scanner.nextInt();
+			if(!parkingLots.containsKey(lot)) {
+				System.out.println("Estacionamento invalido");
+			}
+		}while(!parkingLots.containsKey(lot));
 		
-		Integer numReviewers = UIUtils.INSTANCE.readInteger("message.ask.num.evaluators");
-		testNumReviewers(numReviewers);				
+		scanner.close();
 		
-		evalGroup.allocate(numReviewers);
+		ParkMap activeLot = parkingLots.get(lot);
+			
+		displayMap(activeLot);		
 		
 	}
 	
-	public void testAllocation(EvalGroup group) throws Exception {
-		if (evalGroup.isAllocated()) {
-			throw new BusinessException("exception.allocated.group");
+	private void displayMap(ParkMap lot) {
+		System.out.println("Vagas:");
+		for(ParkSpace space : lot.getSpaceMap()){
+			if(space.getStatus()) {
+				System.out.println(space.getId() + " - ocupada");
+			}
+			else {
+				System.out.println(space.getId() + " - livre");
+			}
 		}
 	}
 	
-	public void testNumReviewers(Integer numReviewers) throws Exception {
-		if(numReviewers < MIN_MEMBERS || numReviewers > MAX_MEMBERS) {
-			throw new BusinessException("exception.invalid.reviewers");
-		}
-	}
+
 	
 }
