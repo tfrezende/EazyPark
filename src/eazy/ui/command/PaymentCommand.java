@@ -23,6 +23,7 @@ public class PaymentCommand extends Command {
 		User activeUser = activeSpace.getUser();
 		
 		System.out.println("--- RECIBO ---");
+		System.out.println("Data: "+ payment.getDate());
 		System.out.println("Estacionamento: " + activeSpace.getParkingLot().getName());
 		System.out.println("Vaga: " + activeSpace.getId());
 		System.out.println("Usuario: " + activeSpace.getUser().getName());
