@@ -1,6 +1,8 @@
 package eazy.business.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class User {
@@ -11,8 +13,10 @@ public class User {
 	private Integer payMethod;
 	private Address address;
 	private String telephone;
+	private Double credit = 100.0;
 	private GPS coordinates;
 	private Reservation reservation;
+	private List<Payment> payments;
 	
 	public User(String name, String password, Integer id, Integer payMethod, 
 			Address address, String telephone) {
@@ -22,6 +26,7 @@ public class User {
 		this.payMethod = payMethod;
 		this.address = address;
 		this.telephone = telephone;
+		this.payments = new ArrayList<Payment>();
 	}
 
 	public void reserveSpace(ParkSpace space, Date startDate, Date endDate) {
@@ -104,6 +109,20 @@ public class User {
 		this.reservation = reservation;
 	}
 
-	
+	public Double getCredit() {
+		return credit;
+	}
+
+	public void setCredit(Double credit) {
+		this.credit = credit;
+	}
+
+	public List<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
+	}	
 	
 }

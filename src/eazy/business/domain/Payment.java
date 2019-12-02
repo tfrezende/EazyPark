@@ -9,12 +9,12 @@ public class Payment {
 	private Double value;
 	private Date date;	
 	
-	public Payment(User user, ParkSpace space, Double value, Date date) {
+	public Payment(ParkSpace space) {
 		super();
-		this.user = user;
+		this.user = space.getUser();
 		this.space = space;
-		this.value = value;
-		this.date = date;
+		this.value = space.calculateCost();
+		this.date = new Date();
 	}
 
 	public User getUser() {

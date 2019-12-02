@@ -21,14 +21,14 @@ public class ConsultCommand extends Command {
 		Map<Integer, ParkMap> parkingLots = parkData.getParkingLots();
 		
 		System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("menu.consult"));
-		System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("message.ask.lot"));
-		
+				
 		for (Map.Entry<Integer, ParkMap> parkLot : parkingLots.entrySet()) {
 			System.out.println(parkLot.getKey() + " - " + parkLot.getValue().getName());
 		}
 		Integer lot = 0;
 		
 		do {
+			System.out.println("\n" + UIUtils.INSTANCE.getTextManager().getText("message.ask.lot"));
 			lot = scanner.nextInt();
 			if(!parkingLots.containsKey(lot)) {
 				System.out.println("Estacionamento invalido");

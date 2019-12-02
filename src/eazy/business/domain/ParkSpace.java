@@ -44,7 +44,7 @@ public class ParkSpace {
 	}
 
 	public Double calculateCost() {
-		return ((hoursOccupied * HOURLY_RATE)/60.0);
+		return ((hoursOccupied * HOURLY_RATE));
 	}
 
 	public boolean getStatus() {
