@@ -35,15 +35,15 @@ public class MainInterface {
 		sb.append("\n");
 		
 		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.1"));
-		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.allocation"));
+		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.consult"));
 		sb.append("\n");
 		
 		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.2"));
-		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.assign.notes"));
+		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.reserve"));
 		sb.append("\n");
 		
 		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.3"));
-		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.products.selection"));
+		sb.append(UIUtils.INSTANCE.getTextManager().getText("menu.payment"));
 		sb.append("\n");
 		
 		sb.append(UIUtils.INSTANCE.getTextManager().getText("message.ask.option"));
